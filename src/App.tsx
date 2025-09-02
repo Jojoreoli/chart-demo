@@ -41,6 +41,21 @@ function App() {
     // Clean up any existing charts first
     cleanupCharts()
 
+    // Common responsive options
+    const responsiveOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          labels: {
+            font: {
+              size: window.innerWidth < 768 ? 12 : 14
+            }
+          }
+        }
+      }
+    }
+
     // Bar Chart - Animal Population in Different Habitats
     if (barChartRef.current) {
       const barCtx = barChartRef.current.getContext('2d')
@@ -70,17 +85,30 @@ function App() {
             }]
           },
           options: {
-            responsive: true,
+            ...responsiveOptions,
             plugins: {
+              ...responsiveOptions.plugins,
               title: {
                 display: true,
                 text: 'Animal Population by Habitat',
-                font: { size: 16 }
+                font: { size: window.innerWidth < 768 ? 14 : 16 }
               }
             },
             scales: {
               y: {
-                beginAtZero: true
+                beginAtZero: true,
+                ticks: {
+                  font: {
+                    size: window.innerWidth < 768 ? 10 : 12
+                  }
+                }
+              },
+              x: {
+                ticks: {
+                  font: {
+                    size: window.innerWidth < 768 ? 10 : 12
+                  }
+                }
               }
             }
           }
@@ -111,17 +139,30 @@ function App() {
             }]
           },
           options: {
-            responsive: true,
+            ...responsiveOptions,
             plugins: {
+              ...responsiveOptions.plugins,
               title: {
                 display: true,
                 text: 'Animal Speed Throughout the Day',
-                font: { size: 16 }
+                font: { size: window.innerWidth < 768 ? 14 : 16 }
               }
             },
             scales: {
               y: {
-                beginAtZero: true
+                beginAtZero: true,
+                ticks: {
+                  font: {
+                    size: window.innerWidth < 768 ? 10 : 12
+                  }
+                }
+              },
+              x: {
+                ticks: {
+                  font: {
+                    size: window.innerWidth < 768 ? 10 : 12
+                  }
+                }
               }
             }
           }
@@ -155,15 +196,21 @@ function App() {
             }]
           },
           options: {
-            responsive: true,
+            ...responsiveOptions,
             plugins: {
+              ...responsiveOptions.plugins,
               title: {
                 display: true,
                 text: 'Animal Diet Distribution',
-                font: { size: 16 }
+                font: { size: window.innerWidth < 768 ? 14 : 16 }
               },
               legend: {
-                position: 'bottom'
+                position: 'bottom',
+                labels: {
+                  font: {
+                    size: window.innerWidth < 768 ? 10 : 12
+                  }
+                }
               }
             }
           }
@@ -194,18 +241,24 @@ function App() {
             }]
           },
           options: {
-            responsive: true,
+            ...responsiveOptions,
             plugins: {
+              ...responsiveOptions.plugins,
               title: {
                 display: true,
                 text: 'Animal Abilities Comparison',
-                font: { size: 16 }
+                font: { size: window.innerWidth < 768 ? 14 : 16 }
               }
             },
             scales: {
               r: {
                 beginAtZero: true,
-                max: 100
+                max: 100,
+                ticks: {
+                  font: {
+                    size: window.innerWidth < 768 ? 10 : 12
+                  }
+                }
               }
             }
           }
