@@ -31,6 +31,9 @@
   padding: 1.5rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
 }
 
 .chart-container:hover {
@@ -40,8 +43,10 @@
 
 .chart-container canvas {
   max-height: 400px;
+  min-height: 300px;
   width: 100% !important;
   height: 100% !important;
+  flex: 1;
 }
 
 /* Responsive design */
@@ -57,5 +62,27 @@
   
   .chart-container {
     padding: 1rem;
+    min-height: 350px;
+  }
+  
+  .chart-container canvas {
+    min-height: 250px;
+    max-height: 350px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .chart-container {
+    min-height: 300px;
+  }
+  
+  .chart-container canvas {
+    min-height: 200px;
+    max-height: 300px;
+  }
+  
+  .app {
+    padding: 10px;
   }
 }
