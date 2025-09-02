@@ -291,6 +291,21 @@ function App() {
           <canvas ref={radarChartRef}></canvas>
         </div>
       </div>
+      
+      <footer className="footer">
+        <p>
+          Created by{' '}
+          <a 
+            href="https://github.com/Jojoreoli" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="github-link"
+          >
+            João Pedro Reis de Oliveira
+          </a>
+          {' '}🐾
+        </p>
+      </footer>
     </div>
   )
 }
